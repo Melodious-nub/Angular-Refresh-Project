@@ -55,6 +55,9 @@ export class UserComponent {
   // output the mordern way (does actuly same as decorator)
   // selectUser = output<string>();
 
+  // for activating the class on user list
+  @Input({required: true}) selected!: boolean;
+
   get imagePath() {
       return 'assets/users/' + this.user.avatar;
   }
@@ -65,6 +68,6 @@ export class UserComponent {
   // imagePath = computed(() => {return 'assets/users/' + this.avatar()})  
 
   onSelectUser() {
-    this.selectUser.emit(this.user.id)
+    this.selectUser.emit(this.user.id);
   }
 }

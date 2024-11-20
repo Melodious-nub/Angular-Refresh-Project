@@ -1,22 +1,24 @@
+@if (isAddingTask) {
+    <app-new-task (cancel)="onCloseTask()" (newAddData)="onAddNewTask($event)"></app-new-task>
+}
+
 <section id="tasks">
     <header>
         <h2>{{name}}'s Tasks</h2>
         <menu>
-            <button>Add Task</button>
+            <button type="button" (click)="openAddTask()">Add Task</button>
         </menu>
     </header>
 
-    
     <ul>
         @if (selectedTask.length !== 0) {
             @for (t of selectedTask; track t.id) {
                 <li>
-                    <app-task [tasks]="t"></app-task>
+                    <app-task [tasks]="t" (complete)="completeTask($event)"></app-task>
                 </li>
             }
         } @else {
             <div class="alert alert-warning">No tasks available</div>
         }
-        
     </ul>
 </section>
