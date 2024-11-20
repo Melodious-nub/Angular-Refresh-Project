@@ -1,0 +1,22 @@
+<section id="tasks">
+    <header>
+        <h2>{{name}}'s Tasks</h2>
+        <menu>
+            <button>Add Task</button>
+        </menu>
+    </header>
+
+    
+    <ul>
+        @if (selectedTask.length !== 0) {
+            @for (t of selectedTask; track t.id) {
+                <li>
+                    <app-task [tasks]="t"></app-task>
+                </li>
+            }
+        } @else {
+            <div class="alert alert-warning">No tasks available</div>
+        }
+        
+    </ul>
+</section>

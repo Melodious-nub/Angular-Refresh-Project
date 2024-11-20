@@ -1,5 +1,26 @@
 <app-header></app-header>
 
 <main>
-    <app-user></app-user>
+    <ul id="users">
+        @for (u of users; track u.id) {
+            <li>
+                <app-user [user]="u" (selectUser)="onSelectUser($event)"></app-user>
+            </li>
+        }
+        <!-- <li>
+            <app-user [user]="users[1]" (selectUser)="onSelectUser($event)"></app-user>
+        </li>
+        <li>
+            <app-user [user]="users[2]" (selectUser)="onSelectUser($event)"></app-user>
+        </li>
+        <li>
+            <app-user [user]="users[3]" (selectUser)="onSelectUser($event)"></app-user>
+        </li> -->
+    </ul>
+
+    @if (selectedUser) {
+        <app-tasks [name]="selectedUser.name" [selectedUserId]="selectedUser.id"></app-tasks>
+    } @else {
+        <p style="color: white;">Please select user to view details</p>
+    }
 </main>
