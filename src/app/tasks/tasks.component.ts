@@ -35,7 +35,8 @@ export class TasksComponent {
   }
 
   onAddNewTask(data: Task) {
-    this.tasks.push({
+    // push add the value on end of the array and unshift add the value on first
+    this.tasks.unshift({
       id: new Date().getTime().toString(),
       userId: this.selectedUserId,
       title: data.title,
