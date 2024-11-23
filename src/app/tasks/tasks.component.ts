@@ -24,10 +24,6 @@ export class TasksComponent {
     return this.task.selectedTask(this.selectedUserId);
   }
 
-  completeTask(id: string) {
-    this.task.onComplete(id);
-  }
-
   isAddingTask: boolean = false;
   openAddTask() {
     this.isAddingTask = true;
@@ -38,7 +34,7 @@ export class TasksComponent {
   }
 
   onAddNewTask(data: Task) {
-    this.task.onAdd(data, this.selectedUserId)
+    this.task.onAdd(data, this.selectedUserId);
     // push add the value on end of the array and unshift add the value on first
     // this.tasks.unshift({
     //   id: new Date().getTime().toString(),

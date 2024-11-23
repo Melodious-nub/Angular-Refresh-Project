@@ -6,12 +6,21 @@ import { dummyTasks } from "./dummy-task";
 export class TaskService {
     tasks = dummyTasks;
 
+    constructor() {
+        const tasks = localStorage.getItem('tasks');
+
+        if (tasks) {
+            this.tasks = JSON.parse(tasks);
+        }
+    }
+
     selectedTask(selectedUserId: string) {
         return this.tasks.filter((task) => task.userId === selectedUserId)!;
     }
 
     onComplete(id: string) {
         this.tasks = this.tasks.filter((task) => task.id !== id)!;
+        this.saveTask();
     }
 
     onAdd(data: Task, selectedUserId: string) {
@@ -23,5 +32,10 @@ export class TaskService {
             summary: data.summary,
             dueDate: data.dueDate
         });
+        this.saveTask();
+    }
+
+    private saveTask() {
+        localStorage.setItem('tasks', JSON.stringify(this.tasks));
     }
 }

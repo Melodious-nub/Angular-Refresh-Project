@@ -14,7 +14,7 @@
         @if (selectedTask.length !== 0) {
             @for (t of selectedTask; track t.id) {
                 <li>
-                    <app-task [tasks]="t" (complete)="completeTask($event)"></app-task>
+                    <app-task [tasks]="t"></app-task>
                 </li>
             }
         } @else {
