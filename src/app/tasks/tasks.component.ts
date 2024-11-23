@@ -3,6 +3,7 @@ import { TaskComponent } from "./task/task.component";
 import { dummyTasks } from './dummy-task';
 import { NewTaskComponent } from "./new-task/new-task.component";
 import { Task } from '../interfaces/task.interface';
+import { TaskService } from './tasks.service';
 
 @Component({
   selector: 'app-tasks',
@@ -14,15 +15,17 @@ import { Task } from '../interfaces/task.interface';
 export class TasksComponent {
   @Input({required: true}) name!: string;
   @Input({required: true}) selectedUserId!: string;
+  // instance for service injection
+  // private taskService = new TaskService();
 
-  tasks = dummyTasks;
+  constructor(private task: TaskService) {}
 
   get selectedTask() {
-    return this.tasks.filter((task) => task.userId === this.selectedUserId)!;
+    return this.task.selectedTask(this.selectedUserId);
   }
 
   completeTask(id: string) {
-    this.tasks = this.tasks.filter((task) => task.id !== id)!;
+    this.task.onComplete(id);
   }
 
   isAddingTask: boolean = false;
@@ -35,14 +38,15 @@ export class TasksComponent {
   }
 
   onAddNewTask(data: Task) {
+    this.task.onAdd(data, this.selectedUserId)
     // push add the value on end of the array and unshift add the value on first
-    this.tasks.unshift({
-      id: new Date().getTime().toString(),
-      userId: this.selectedUserId,
-      title: data.title,
-      summary: data.summary,
-      dueDate: data.dueDate
-    });
+    // this.tasks.unshift({
+    //   id: new Date().getTime().toString(),
+    //   userId: this.selectedUserId,
+    //   title: data.title,
+    //   summary: data.summary,
+    //   dueDate: data.dueDate
+    // });
     this.isAddingTask = false;
   }
 
