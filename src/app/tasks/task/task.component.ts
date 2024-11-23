@@ -13,7 +13,6 @@ import { TaskService } from '../tasks.service';
 })
 export class TaskComponent {
   @Input({required: true}) tasks!: Task;
-  @Output() complete = new EventEmitter<string>();
   private taskService = inject(TaskService);
 
   onCompleteTask() {
