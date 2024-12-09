@@ -47,7 +47,7 @@ export class UserComponent {
   // }
 
   // user input with ref. interface
-  @Input({required: true}) user!: User;
+  @Input({required: true}) user!: any;
   // output common way used from begining
   @Output() selectUser = new EventEmitter<string>();
   // output the mordern way (does actuly same as decorator)
@@ -57,7 +57,7 @@ export class UserComponent {
   @Input({required: true}) selected!: boolean;
 
   get imagePath() {
-      return 'assets/users/' + this.user.avatar;
+      return this.user.imgUrl;
   }
 
   // signal ways input

@@ -1,0 +1,76 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "age": 28,
+      "email": "john.doe@example.com",
+      "designation": "Software Engineer",
+      "number": "+1234567890",
+      "imgUrl": "https://avatar.iran.liara.run/public/1"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "age": 32,
+      "email": "jane.smith@example.com",
+      "designation": "Project Manager",
+      "number": "+9876543210",
+      "imgUrl": "https://avatar.iran.liara.run/public/2"
+    },
+    {
+      "id": 3,
+      "name": "Emily Johnson",
+      "age": 24,
+      "email": "emily.johnson@example.com",
+      "designation": "UI/UX Designer",
+      "number": "+1122334455",
+      "imgUrl": "https://avatar.iran.liara.run/public/3"
+    },
+    {
+      "id": 4,
+      "name": "Michael Brown",
+      "age": 40,
+      "email": "michael.brown@example.com",
+      "designation": "Team Lead",
+      "number": "+2233445566",
+      "imgUrl": "https://avatar.iran.liara.run/public/4"
+    },
+    {
+      "id": 5,
+      "name": "Sophia Wilson",
+      "age": 29,
+      "email": "sophia.wilson@example.com",
+      "designation": "QA Analyst",
+      "number": "+3344556677",
+      "imgUrl": "https://avatar.iran.liara.run/public/2"
+    },
+    {
+      "id": "a290",
+      "name": "Shawon Talukder",
+      "age": 26,
+      "email": "shawon.taluckder@outlook.com",
+      "designation": "Software engineer",
+      "number": "01772219732",
+      "imgUrl": "https://avatar.iran.liara.run/public/6"
+    },
+    {
+      "id": "e9ee",
+      "imgUrl": "https://avatar.iran.liara.run/public/6",
+      "name": "Tanvir Ahsan",
+      "age": 27,
+      "email": "tanvir@gmail.com",
+      "designation": "Assistant Engineer",
+      "number": "09485794756"
+    },
+    {
+      "id": "9faf",
+      "imgUrl": "https://avatar.iran.liara.run/public/8",
+      "name": "Abdul Azim",
+      "age": 26,
+      "email": "azim@atha.com",
+      "designation": "Support",
+      "number": "3846354"
+    }
+  ]
+}

@@ -6,6 +6,13 @@ import { HeaderComponent } from "./header/header.component";
 import { UserComponent } from "./user/user.component";
 import { SharedModule } from "./shared/shared.module";
 import { TasksModule } from "./tasks/tasks.module";
+import { HttpClientModule } from "@angular/common/http";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { AddUserModalComponent } from "./add-user-modal/add-user-modal.component";
+import { ManageUserModalComponent } from "./manage-user-modal/manage-user-modal.component";
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 @NgModule({
     // declaration for non standalone component
@@ -18,9 +25,18 @@ import { TasksModule } from "./tasks/tasks.module";
     imports: [
         BrowserModule,
         SharedModule,
-        TasksModule
+        TasksModule,
+        HttpClientModule,
+        AddUserModalComponent,
+        ManageUserModalComponent,
+        MatButtonModule,
+        MatDialogModule,
+        MatSnackBarModule
     ],
     // for letting angular know the entry component
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    providers: [
+      provideAnimationsAsync()
+    ]
 })
 export class AppModule {}

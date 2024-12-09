@@ -1,5 +1,10 @@
 <app-header (testData)="onRecive($event)"></app-header>
 
+<div class="text-center">
+    <button class="btn btn-sm btn-outline-success me-3" (click)="openDialogAddUser()">Add User</button>
+    <button class="btn btn-sm btn-outline-warning" (click)="openDialogManageUser()">Manage User</button>
+</div>
+
 <main>
     <ul id="users">
         @for (u of users; track u.id) {

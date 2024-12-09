@@ -1,0 +1,95 @@
+<h2 mat-dialog-title>Add new user</h2>
+<mat-dialog-content class="mat-typography">
+  <form>
+    <div class="container">
+      <form>
+        <div class="row">
+          <!-- Name Field -->
+          <div class="col-md-6 mb-3">
+            <label for="userName" class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="userName"
+              placeholder="Enter name"
+              [(ngModel)]="userData.name"
+              name="name"
+            />
+          </div>
+    
+          <!-- Age Field -->
+          <div class="col-md-6 mb-3">
+            <label for="userAge" class="form-label">Age</label>
+            <input
+              type="number"
+              class="form-control"
+              id="userAge"
+              placeholder="Enter age"
+              [(ngModel)]="userData.age"
+              name="age"
+            />
+          </div>
+        </div>
+    
+        <div class="row">
+          <!-- Email Field -->
+          <div class="col-md-6 mb-3">
+            <label for="userEmail" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="userEmail"
+              placeholder="Enter email"
+              [(ngModel)]="userData.email"
+              name="email"
+            />
+          </div>
+    
+          <!-- Designation Field -->
+          <div class="col-md-6 mb-3">
+            <label for="userDesignation" class="form-label">Designation</label>
+            <input
+              type="text"
+              class="form-control"
+              id="userDesignation"
+              placeholder="Enter designation"
+              [(ngModel)]="userData.designation"
+              name="designation"
+            />
+          </div>
+        </div>
+    
+        <div class="row">
+          <!-- Number Field -->
+          <div class="col-md-6 mb-3">
+            <label for="userNumber" class="form-label">Number</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="userNumber"
+              placeholder="Enter phone number"
+              [(ngModel)]="userData.number"
+              name="number"
+            />
+          </div>
+          <!-- imageUrl Field -->
+          <div class="col-md-6 mb-3">
+            <label for="imgUrl" class="form-label">Image Url</label>
+            <input
+              type="text"
+              class="form-control"
+              id="imgUrl"
+              placeholder="Enter image url"
+              [(ngModel)]="userData.imgUrl"
+              name="imgUrl"
+            />
+          </div>
+        </div>
+      </form>
+    </div>    
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="addNewUser()">Add</button>
+</mat-dialog-actions>
