@@ -17,4 +17,12 @@ export class DataService {
     return this.http.post<any>(this.baseApi+'users', data);
   }
 
+  getTasks(userId: any) {
+    return this.http.get<any>(this.baseApi+'tasks'+'?userId='+ userId)
+  }
+
+  addTask(data:any) {
+    return this.http.post<any>(this.baseApi+'tasks', data);
+  }
+
 }

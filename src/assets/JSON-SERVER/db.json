@@ -72,5 +72,35 @@
       "designation": "Support",
       "number": "3846354"
     }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": 2,
+      "title": "Master Angular",
+      "summary": "Learn all the basic and advanced features of Angular & how to apply them.",
+      "dueDate": "2025-12-31"
+    },
+    {
+      "id": "27a4",
+      "userId": 1,
+      "title": "Test",
+      "summary": "sudhsyg fwoghf",
+      "dueDate": "2024-12-02"
+    },
+    {
+      "id": "d297",
+      "userId": 1,
+      "title": "test 3",
+      "summary": "hgjvbgj ghfc",
+      "dueDate": "2024-12-03"
+    },
+    {
+      "id": "c51c",
+      "userId": 1,
+      "title": "Hello test",
+      "summary": "Heloooooooooooo",
+      "dueDate": "2024-12-05"
+    }
   ]
 }

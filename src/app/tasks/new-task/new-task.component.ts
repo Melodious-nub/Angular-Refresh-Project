@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-new-task',
@@ -12,6 +12,7 @@ export class NewTaskComponent {
   summary: string = '';
   dueDate: string = 'dueDate';
   @Output() newAddData = new EventEmitter();
+  @Input({required: true}) selectedUserId: any;
 
   onCancel() {
     this.cancel.emit();
@@ -19,7 +20,7 @@ export class NewTaskComponent {
 
   onAddNewData() {
     this.newAddData.emit({
-      title: this.title, summary: this.summary, dueDate: this.dueDate
+      userId: this.selectedUserId, title: this.title, summary: this.summary, dueDate: this.dueDate
     });
   }
 

@@ -24,7 +24,7 @@
     </ul>
 
     @if (selectedUser) {
-        <app-tasks [name]="selectedUser.name" [selectedUserId]="selectedUser.id"></app-tasks>
+        <app-tasks [name]="selectedUser.name" [selectedUserId]="selectedUser.id" [selectedTasks]="selectedTasks"></app-tasks>
     } @else {
         <p style="color: white;">Please select user to view details</p>
     }

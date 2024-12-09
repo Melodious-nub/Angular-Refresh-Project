@@ -43,7 +43,16 @@ export class AppComponent implements OnInit {
   fetchUsers() {
     this.api.getUsers().subscribe(res => {
       this.users = res;
-      console.log(this.users);
+      // console.log(this.users);
+    })
+  }
+
+
+  selectedTasks: any;
+  fetchSelectedTask(id: any) {
+    this.api.getTasks(id).subscribe(res => {
+      this.selectedTasks = res;
+      // console.log(res, 'triggerd selected task');
     })
   }
 
@@ -58,5 +67,6 @@ export class AppComponent implements OnInit {
   onSelectUser(id: string) {
     // console.log('selected user id' + id);
     this.selectedUserId = id;
+    this.fetchSelectedTask(id);
   }
 }
