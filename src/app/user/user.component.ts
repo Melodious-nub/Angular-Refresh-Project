@@ -4,9 +4,10 @@ import { User } from '../interfaces/user.model';
 // const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrl: './user.component.css'
+    selector: 'app-user',
+    templateUrl: './user.component.html',
+    styleUrl: './user.component.css',
+    standalone: false
 })
 export class UserComponent {
   // default way zone.js and angular default change detection machanism
