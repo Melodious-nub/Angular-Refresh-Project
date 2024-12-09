@@ -44,10 +44,6 @@ export class TasksComponent {
         verticalPosition: 'bottom',
       });
     });
-
-    this.api.getTasks(this.selectedUserId).subscribe(res => {
-      this.selectedTasks = res;
-    })
     // push add the value on end of the array and unshift add the value on first
     // this.tasks.unshift({
     //   id: new Date().getTime().toString(),
